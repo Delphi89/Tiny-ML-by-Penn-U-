@@ -19,3 +19,6 @@ model.fit(xs, ys, epochs = 500)
 print(model.predict([10.0]))
 print(my_layer_1.get_weights())
 print(my_layer_2.get_weights())
+
+#show the number of neurons from a layer
+print(my_layer_1.get_weights()[0].size)
