@@ -20,5 +20,7 @@ print(model.predict([10.0]))
 print(my_layer_1.get_weights())
 print(my_layer_2.get_weights())
 
-#show the number of neurons from a layer
+#get number of weights
 print(my_layer_1.get_weights()[0].size)
+#get number of biases/nodes
+print(my_layer_1.get_weights()[1].size)
