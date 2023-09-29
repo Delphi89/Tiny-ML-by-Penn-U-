@@ -3,7 +3,7 @@ import numpy as np
 from tensorflow import keras
 import matplotlib.pyplot as plt
 
-data = tf.keras.datasets.fashion_mnist
+data = tf.keras.datasets.mnist
 (training_images, training_labels), (val_images, val_labels) = data.load_data()
 
 print("shape of training images: ", training_images.shape)
@@ -44,14 +44,14 @@ LOSS = 'sparse_categorical_crossentropy'
 
 model.compile(optimizer = OPT, loss = LOSS, metrics = ['accuracy'])
 
-model.fit(training_images, training_labels, epochs = 20, validation_data = (val_images, val_labels))
+model.fit(training_images, training_labels, epochs = 2, validation_data = (val_images, val_labels))
 
 model.evaluate(val_images, val_labels)
 
 
 classifications = model.predict(val_images)
-print(clasifications[0])
-print("predicted class: ", np.argmax(clasifications[0]))
+print(classifications[0])
+print("predicted class: ", np.argmax(classifications[0]))
 print("The actual class: ", val_labels[0])
 
 
